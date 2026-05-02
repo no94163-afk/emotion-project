@@ -72,7 +72,7 @@ CLASS_LABELS = ['angry', 'disgusted', 'fearful', 'happy', 'neutral', 'sad', 'sur
 @st.cache_resource
 def load_model():
     # تأكدي من وجود هذا الملف في الفولدر
-    model = tf.keras.models.load_model('emotion_model_final.h5')
+    model = tf.keras.models.load_model('emotion_model_final.h5', compile=False)
     # تحميل الـ Cascade لاكتشاف الوجوه
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
     return model, face_cascade
